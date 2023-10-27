@@ -1,4 +1,4 @@
-import { Action } from './Action';
+import { Actions } from './Actions';
 import { List } from './List';
 import './App.css';
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App flex">
      <List/>
-     <Action/>
+     <Actions/>
      <List/>
 
     </div>
