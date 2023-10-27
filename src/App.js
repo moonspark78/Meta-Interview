@@ -3,11 +3,15 @@ import { List } from './List';
 import './App.css';
 import {items} from "./data"
 import { useState } from 'react';
+import { intersection, not } from './utils';
 
 function App() {
   const [leftItems, setLeftItems] = useState(items)
   const [righrItems, setRightItems] = useState([])
   const [checkedItems, setCheckedItems] = useState([])
+
+  const leftCheckedItems = intersection(leftItems, checkedItems)
+  const rightCheckedItems = intersection(righrItems, checkedItems)
 
   const handleToggle = (item) =>{
     const currentIndex = checkedItems.indexOf(item)
@@ -22,11 +26,15 @@ function App() {
   };
 
   const moveRight = () =>{
-    console.log("moveRight");
+    setRightItems(righrItems.concat(leftCheckedItems))
+    setLeftItems(not(leftItems, leftCheckedItems))
+    setCheckedItems(not(checkedItems, leftCheckedItems))
   }
 
   const moveLeft = () =>{
-    console.log("moveLeft");
+    setLeftItems(leftItems.concat(rightCheckedItems))
+    setRightItems(not(righrItems, rightCheckedItems))
+    setCheckedItems(not(checkedItems, rightCheckedItems))
   }
 
 
