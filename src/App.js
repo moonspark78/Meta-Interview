@@ -12,14 +12,31 @@ function App() {
   const handleToggle = (item) =>{
     const currentIndex = checkedItems.indexOf(item)
     const newCheckedItems  = [ ...checkedItems]
-    
 
+    if(currentIndex === -1){
+      newCheckedItems.push(item);
+    } else {
+      newCheckedItems.splice(currentIndex, 1)
+    }
+    setCheckedItems(newCheckedItems);
+  };
+
+  const moveRight = () =>{
+    console.log("moveRight");
   }
+
+  const moveLeft = () =>{
+    console.log("moveLeft");
+  }
+
+
+  console.log(checkedItems );
+
   return (
     <div className="App flex">
-     <List items={leftItems}/>
-     <Actions/>
-     <List items={righrItems}/>
+     <List items={leftItems} handleToggle={handleToggle}/>
+     <Actions moveLeft={moveLeft} moveRight={moveRight}/>
+     <List items={righrItems} handleToggle={handleToggle}/>
 
     </div>
   );

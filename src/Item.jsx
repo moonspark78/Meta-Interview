@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Item = ({item}) => {
+export const Item = ({item, handleToggle}) => {
   return (
     <label>
-        <input type='checkbox'/>
+        <input type='checkbox' onChange={() => handleToggle(item)} />
         {item}
     </label>
   )
