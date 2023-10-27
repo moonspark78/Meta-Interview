@@ -9,12 +9,12 @@ function App() {
   const [righrItems, setRightItems] = useState([])
   return (
     <div className="App flex">
-     <List/>
+     <List items={leftItems}/>
      <Actions/>
-     <List/>
+     <List items={righrItems}/>
 
     </div>
   );
 }
 
-export default App;
+export default App; 
