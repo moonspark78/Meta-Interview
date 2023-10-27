@@ -13,6 +13,7 @@
   width: 100px;
   border: solid black 1px;
   border-radius: 12px;
+  flex-direction: column;
 }
 .actions{
   
