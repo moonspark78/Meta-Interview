@@ -7,6 +7,14 @@ import { useState } from 'react';
 function App() {
   const [leftItems, setLeftItems] = useState(items)
   const [righrItems, setRightItems] = useState([])
+  const [checkedItems, setCheckedItems] = useState([])
+
+  const handleToggle = (item) =>{
+    const currentIndex = checkedItems.indexOf(item)
+    const newCheckedItems  = [ ...checkedItems]
+    
+
+  }
   return (
     <div className="App flex">
      <List items={leftItems}/>
