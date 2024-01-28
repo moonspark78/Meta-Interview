@@ -4,6 +4,7 @@ import './App.css';
 import {items} from "./data"
 import { useState } from 'react';
 import { intersection, not } from './utils';
+import {Form} from "./Components/Form"
 
 function App() {
   const [leftItems, setLeftItems] = useState(items)
@@ -42,9 +43,11 @@ function App() {
 
   return (
     <div className="App flex">
-     <List items={leftItems} handleToggle={handleToggle}/>
+     {/* <List items={leftItems} handleToggle={handleToggle}/>
      <Actions moveLeft={moveLeft} moveRight={moveRight}/>
-     <List items={righrItems} handleToggle={handleToggle}/>
+     <List items={righrItems} handleToggle={handleToggle}/> */}
+
+     <Form/>
 
     </div>
   );
